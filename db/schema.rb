@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_150358) do
+ActiveRecord::Schema.define(version: 2020_02_24_153102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2020_02_24_150358) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_bookings_on_listing_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
   create_table "listings", force: :cascade do |t|
     t.string "brand"
     t.string "production_year"
@@ -58,5 +67,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_150358) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "listings"
+  add_foreign_key "bookings", "users"
   add_foreign_key "listings", "users"
 end
