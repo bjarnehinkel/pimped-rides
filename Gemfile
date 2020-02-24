@@ -14,8 +14,12 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+<<<<<<< HEAD
 gem 'cloudinary', '~> 1.12.0'
 
+=======
+gem 'devise'
+>>>>>>> 20c3be924ecf3a535e81db4af43db1a697104c54
 
 group :development do
   gem 'web-console', '>= 3.3.0'
