@@ -1,10 +1,9 @@
-<div style="background-image: url('<%= image_path('background.jpg') %>'); width: 100%; height: 100vh; background-position: center; background-size: cover;">
-  <div class="container pt-5 form-position">
+<div class="container pt-5 form-position">
     <div class="row justify-content-center">
       <div class="col-12 col-md-6 col-lg-4" style="color: white">
             <h2 class="text-center mb-5">Find your <strong>Car</strong> </h2>
          <%= simple_form_for :search, url: listings_path do |f| %>
-          <div class="form-group">
+          <div class="form-group bg-transparent">
             <%= f.input :brand %>
             <%= f.input :production_year %>
             <%= f.button :submit ,class:"btn btn-primary btn-lg w-100"%>
@@ -14,4 +13,3 @@
     </div>
 </div>
 
-c
