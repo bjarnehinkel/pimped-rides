@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+  height: 51px;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+.Pimped-Rides {
+  height: 13px;
+}
+.log-in {
+  position: relative;
+  right: 12px;
+}
