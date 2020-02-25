@@ -1,9 +1,10 @@
 class ListingsController < ApplicationController
   before_action :search, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
 
   def index
   end
-  
+
   def search
     if params["search"]
       @listings = Listing.where(brand:params["search"]["brand"], production_year:params["search"]["production_year"])
