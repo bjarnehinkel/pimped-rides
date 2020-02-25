@@ -6,12 +6,11 @@ background-position: center;
 background-size: cover;
 }
 
-
-
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
   height: 51px;
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -23,6 +22,7 @@ background-size: cover;
 }
 .Pimped-Rides {
   height: 13px;
+  color: white;
 }
 .log-in {
   position: relative;
@@ -31,7 +31,29 @@ background-size: cover;
 .form-position {
     position: relative;
     right: 400px;
-    top: 100px;
 }
 
-
+.form-group {
+  padding: 1px;
+}
+.end-date {
+  position: relative;
+  left: 175px;
+  bottom: 106px;
+}
+.search-form {
+  padding: 25px;
+  bottom: 36px;
+}
+.search-value {
+  position: relative;
+  bottom: 115px;
+}
+.container-home {
+  height: 100vh;
+}
+.hasDatepicker {
+  position: relative;
+  top: 1px;
+  font-size: 11px;
+}
