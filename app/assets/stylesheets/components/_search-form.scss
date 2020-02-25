@@ -1,8 +1,19 @@
 .search-form{
   background-color: rgb(30,30,30);
-  opacity: 1;
   padding: 25px;
   color: white;
   border-radius: 4px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.7)
+  box-shadow: 0 0 10px rgba(255,255,255,0.4)
+  // bottom: 36px;
+}
+
+#date {
+  display: inline-block;
+  height: 40px;
+  border-radius: 2px;
+  width: 100%;
+}
+
+input {
+  text-indent: 5px;
 }
