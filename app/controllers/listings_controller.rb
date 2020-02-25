@@ -3,8 +3,7 @@ class ListingsController < ApplicationController
 
   def index
   end
-
-
+  
   def search
     if params["search"]
       @listings = Listing.where(brand:params["search"]["brand"], production_year:params["search"]["production_year"])
@@ -36,5 +35,4 @@ private
   def params_listing
     params.require(:listing).permit(:name,:brand,:production_year)
   end
-
 end
