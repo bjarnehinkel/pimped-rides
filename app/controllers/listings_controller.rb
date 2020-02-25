@@ -6,7 +6,11 @@ class ListingsController < ApplicationController
 
 
   def search
-    @listings = Listing.where(brand:params["search"]["brand"], production_year:params["search"]["production_year"])
+    if params["search"]
+      @listings = Listing.where(brand:params["search"]["brand"], production_year:params["search"]["production_year"])
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
