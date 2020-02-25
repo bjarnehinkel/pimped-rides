@@ -12,13 +12,15 @@ Listing.destroy_all
 puts "the test starts here"
 10.times do
   listing = Listing.new(
+    photo_code: 'https://source.unsplash.com/random',
     # photo: 'https://source.unsplash.com/random',
     brand: Faker::Vehicle.make,
     production_year: 2014,
     user: User.new(email: Faker::Internet.email , password: '123456'),
     name: Faker::Vehicle.model,
     start_date: Faker::Date.in_date_period,
-    end_date: Faker::Date.forward(days: 14)
+    end_date: Faker::Date.forward(days: 14),
+    prices: 290
   )
   listing.save!
 end
