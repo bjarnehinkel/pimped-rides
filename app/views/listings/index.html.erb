@@ -1,9 +1,10 @@
-<h1>Listings</h1>
-
-<ul>
-<% @listings.each do |listing| %>
-<li>
-<%= link_to listing[:brand], listing_path(listing) %>
-</li>
-<% end %>
-</ul>
+<%= render 'components/navbar' %>
+<div class="container">
+  <div class="cards">
+    <% @listings.each do |listing| %>
+      <%= link_to listing_path do %>
+        <%= render 'components/listing-card', listing: listing %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
