@@ -2,7 +2,7 @@
 <div class="container">
   <div class="cards">
     <% @listings.each do |listing| %>
-      <%= link_to listing_path do %>
+      <%= link_to listing_path(listing) do %>
         <%= render 'components/listing-card', listing: listing %>
       <% end %>
     <% end %>
