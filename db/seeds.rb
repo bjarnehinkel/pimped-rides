@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Listing.destroy_all
+Listings.destroy_all
 
 puts "the test starts here"
 10.times do
