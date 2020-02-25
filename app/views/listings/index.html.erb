@@ -1,0 +1,10 @@
+<%= render 'components/navbar' %>
+<div class="container">
+  <div class="cards">
+    <% @listings.each do |listing| %>
+      <%= link_to listing_path do %>
+        <%= render 'components/listing-card', listing: listing %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
