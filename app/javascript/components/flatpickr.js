@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 
 const pickDate = () => {
-  flatpickr("#dates", {
+  flatpickr(".dates", {
   mode: "range",
     minDate: "today",
     dateFormat: "Y-m-d",
