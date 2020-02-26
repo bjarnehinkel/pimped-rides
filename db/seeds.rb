@@ -8,7 +8,6 @@
 require 'faker'
 Listing.destroy_all
 
-Listing.destroy_all
 
 puts "the test starts here"
 10.times do
