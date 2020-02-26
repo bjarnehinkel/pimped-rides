@@ -1,6 +1,6 @@
-
-<!-- <div id="container-home"> -->
-<!-- <form class="mx-2">
+<!--
+<div id="container-home">
+<form class="mx-2">
 
   <div class="container pt-5 form-position">
     <div class="d-flex justify-content-start">
@@ -8,38 +8,84 @@
         <h2 class="text-center mb-5 ct-letter-spacing-1">Find your <strong>Car</strong> </h2>
 
         <%= simple_form_for :search,url:listings_path,method: :get do |f| %>
-          <div class="form-group"> -->
-       <!--      <%= f.input :brand %>
-            <%= f.input :production_year %> -->
-          <!-- </div>
+          <div class="form-group">
+          <%= f.input :brand %>
+            <%= f.input :production_year %>
+          </div>
 
           <div class="form-group">
-            <label for="from">Date</label>
-            <input type="date" id="dates" name="from">
+           <%= f.input :date %>
           </div>
             <div class="row">
               <div class="col">
                 <%= f.button :submit, 'Search', class:"form-control btn btn-outline-light w-100 mt-3"%>
               </div>
-              <div class="col">
-                <%= f.button :submit, 'Get lucky', class:"btn btn-outline-light w-100 mt-3"%>
 
-              </div>
             </div>
         <% end %>
       </div>
     </div>
   </div>
 
+</form>
+ </div>
+-->
+
+<!-- PURE CODE -->
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-start">
+    <div class="col-12 col-md-8 col-lg-5 bg-dark text-light mt-5 p-4 rounded ct-box-shadow ct-opacity-09">
+      <h2 class="text-center mb-4 ct-letter-spacing-1">
+        Find your <strong>Car</strong>
+      </h2>
+      <%= simple_form_for :search, url: listings_path, method: :get do |f| %>
+        <%= f.input :brand %>
+        <%= f.input :production_year %>
+        <%= f.input :date %>
+        <%= f.button :submit, 'Search', class:"form-control btn btn-outline-light w-100 mt-3"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form class=" bg-dark">
+
+          <label for="exampleInputEmail1">Car Brand</label>
+        <%= simple_form_for :search, url: listings_path, method: :get do |f| %>
+        <%= f.input :brand %>
+        <%= f.input :production_year %>
+        <%= f.input :date %>
+        <%= f.button :submit, 'Search'%>
+        <% end %>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form> -->
-<!-- </div> -->
-
-<%= simple_form_for :search, url: listings_path, method: :get do |f| %>
-<%= f.input :brand %>
-<%= f.input :production_year %>
-<%= f.button :submit, 'search' %>
-
-<% end %>
 
 
 
