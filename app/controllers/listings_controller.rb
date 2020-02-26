@@ -6,14 +6,20 @@
   end
 
   def search
-    if params[:search][:brand] == "" && params[:search][:production_year] == ""
-      @listings = Listing.all
-    elsif params[:search][:brand] == "" && params[:search][:production_year] != ""
-      @listings = Listing.where(production_year: params[:search][:production_year])
-    elsif params[:search][:brand] != "" && params[:search][:production_year] == ""
-      @listings = Listing.where(brand: params[:search][:brand])
+    unless params[:search].nil?
+      if (params[:search][:brand] == "" && params[:search][:production_year] == "")
+        @listings = Listing.all
+      elsif params[:search][:brand] == "" && params[:search][:production_year] != ""
+        @listings = Listing.where(production_year: params[:search][:production_year])
+      elsif params[:search][:brand] != "" && params[:search][:production_year] == ""
+        @listings = Listing.where(brand: params[:search][:brand])
+      elsif condition
+
+      else
+        @listings = Listing.where(brand: params[:search][:brand], production_year: params[:search][:production_year])
+      end
     else
-      @listings = Listing.where(brand: params[:search][:brand], production_year: params[:search][:production_year])
+      @listings = Listing.all
     end
   end
 
