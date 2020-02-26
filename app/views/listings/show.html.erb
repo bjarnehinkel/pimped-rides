@@ -60,9 +60,18 @@
   <input type="radio" id="slideCheckbox4" name="slide"></input>
   <div class="slide">
     <div class="slide__content">
-        <button id="clickme" class="btn btn-primary btn-lg">
+<!--         <button id="clickme" class="btn btn-primary btn-lg">
           Booking
-        </button>
+        </button> -->
+        <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary button-model" data-toggle="modal" data-target="#exampleModalCenter">
+        Booking
+      </button>
+      <button type="button" class="btn btn-primary button-model" data-toggle="modal" data-target="#exampleModalCenter">
+        Save
+      </button>
+
+
     </div>
   </div>
   <!-- Slide 5 -->
@@ -70,13 +79,41 @@
   <input type="radio" id="slideCheckbox5" name="slide"></input>
   <div class="slide">
     <div class="slide__content">
-      <h1>The end</h1>
-      <p>It's over</p>
+
+
+      <button class="btn btn-primary button-model">
+        <%= link_to listings_path do %>
+          <p class="Pimped-Rides">Pimped Rides</p>
+        <% end %>
+      </button>
+
+
     </div>
   </div>
   <!-- Add more slides here! -->
 </fieldset>
 
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 

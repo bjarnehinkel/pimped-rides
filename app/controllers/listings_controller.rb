@@ -1,4 +1,4 @@
-class ListingsController < ApplicationController
+  class ListingsController < ApplicationController
   before_action :search, only: :index
   skip_before_action :authenticate_user!, only: [:index, :search, :show]
 

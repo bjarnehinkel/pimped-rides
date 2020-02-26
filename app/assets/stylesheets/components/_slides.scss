@@ -1,6 +1,3 @@
-
-
-
 $slide-count: 5;
 
 // Tab colours (must be same as number of slides)
@@ -295,5 +292,20 @@ p{
   letter-spacing: 2px;
 }
 
+.button-model {
+  color: #fff;
+  background-color: #F0453A;
+  border-color: #F0453A;
+  position: relative;
+  top: 220px;
+  left: 220px;
+}
 
-
+.button-model:hover {
+  color: #fff;
+  background-color: #F0453A;
+  border-color: #F0453A;
+  position: relative;
+  top: 220px;
+  left: 220px;
+}
