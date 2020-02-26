@@ -41,8 +41,8 @@
       </h2>
       <%= simple_form_for :search, url: listings_path, method: :get do |f| %>
         <%= f.input :brand %>
-      <%= f.input :production_year %>
-      <%= f.input :date %>
+        <%= f.input :production_year %>
+        <%= f.input :date %>
         <%= f.button :submit, 'Search', class:"form-control btn btn-outline-light w-100 mt-3"%>
       <% end %>
     </div>
