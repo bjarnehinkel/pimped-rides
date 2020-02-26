@@ -6,10 +6,14 @@ class ListingsController < ApplicationController
   end
 
   def search
-    if params["search"]
-      @listings = Listing.where(brand:params["search"]["brand"], production_year:params["search"]["production_year"])
-    else
+    if params[:search][:brand] == "" && params[:search][:production_year] == ""
       @listings = Listing.all
+    elsif params[:search][:brand] == "" && params[:search][:production_year] != ""
+      @listings = Listing.where(production_year: params[:search][:production_year])
+    elsif params[:search][:brand] != "" && params[:search][:production_year] == ""
+      @listings = Listing.where(brand: params[:search][:brand])
+    else
+      @listings = Listing.where(brand: params[:search][:brand], production_year: params[:search][:production_year])
     end
   end
 
