@@ -7,9 +7,9 @@ $slide-count: 5;
 $c-slides: #2E112D #540032 #820333 #C9283E #F0433A;
 
 // Slide backgrounds (must be same as number of slides)
-$b-slides: url('car1.jpg') url('car2.jpg') url('car3')
-url('car4')
-url('car5');
+$b-slides: url('https://res.cloudinary.com/dvscdtpyl/image/upload/v1582727747/car1_fbfbvo.jpg') url('https://res.cloudinary.com/dvscdtpyl/image/upload/v1582727747/car2_df1d9u.jpg') url('https://res.cloudinary.com/dvscdtpyl/image/upload/v1582727747/car3_lfxc0x.jpg')
+url('https://res.cloudinary.com/dvscdtpyl/image/upload/v1582727747/car4_zirtfz.jpg')
+url('https://res.cloudinary.com/dvscdtpyl/image/upload/v1582727747/car5_snvawv.jpg');
 
 // Total duration of slide animation
 $animation-duration: 2s;
