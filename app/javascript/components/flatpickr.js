@@ -15,5 +15,3 @@ const pickDate = () => {
 }
 
 export { pickDate }
-
-
