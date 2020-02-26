@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-Listings.destroy_all
+# Listings.destroy_all
 
 puts "the test starts here"
 10.times do
   listing = Listing.new(
-    photo_code: 'https://source.unsplash.com/random',
+    photo_code: 'car1.jpg',
     # photo: 'https://source.unsplash.com/random',
     brand: Faker::Vehicle.make,
     production_year: 2014,

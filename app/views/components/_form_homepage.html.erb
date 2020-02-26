@@ -1,49 +1,35 @@
-<!-- <div id="container-home"> -->
-<form class="mx-4">
+<form class="mx-2">
   <div class="container pt-5 form-position">
-    <div class="row justify-content-center">
-
-      <div class="col-12 col-md-8 col-lg-4 search-form mt-5 ">
+    <div class="d-flex justify-content-start">
+      <div class="col-12 col-md-8 col-lg-5 search-form mt-5 ">
         <h2 class="text-center mb-5 ct-letter-spacing-1">Find your <strong>Car</strong> </h2>
-        <%= simple_form_for :search, url: listings_path do |f| %>
+        <%= simple_form_for :search do |f| %>
           <div class="form-group">
             <%= f.input :brand %>
             <%= f.input :production_year %>
           </div>
           <div class="form-group">
             <label for="from">Date</label>
-            <input type="date" id="date" name="from">
+            <input type="date" id="dates" name="from">
           </div>
-
             <div class="row">
               <div class="col">
-                <%= f.button :submit ,class:"form-control btn btn-outline-light w-100 mt-3"%>
+                <%= f.button :submit, 'Search', class:"form-control btn btn-outline-light w-100 mt-3"%>
               </div>
               <div class="col">
-                <%= f.button :submit ,class:"btn btn-outline-light w-100 mt-3"%>
+                <%#= f.button :submit, 'I´ll get lucky', class:"btn btn-outline-light w-100 mt-3"%>
               </div>
-
             </div>
-
         <% end %>
       </div>
     </div>
   </div>
 </form>
-<!-- </div> -->
-
-<!-- <form>
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="First name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last name">
-    </div>
-  </div>
-</form> -->
 
 
 
-
-
+<%= form_with(url: "/search", method: "get", local: true) do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
