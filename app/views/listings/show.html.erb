@@ -1,66 +1,87 @@
-<%= image_tag @listing.photo_code , class:"rounded mx-auto d-block" , height:350%>
-<h1>Title</h1>
+<fieldset class="slideshow">
 
-<h2><%= @listing.brand%></h2>
+  <!-- Slide 1 -->
+  <label class="slide-button" for="slideCheckbox1">Intro</label>
+  <input type="radio" id="slideCheckbox1" name="slide" checked></input>
+  <div class="slide">
+    <div class="slide__content">
+      <br><br><br>
+      <h1>LAMBORGHINI HURACAN</h1>
+      <p>Specials on Luxury Car Rentals.</p>
+      <p>To add or remove slides:</p>
+      <ul>
+        <li>Car Class: Luxury or Luxury Convertible</li>
+        <li>Make: <code>Lamborghini</code></li>
+        <li>Number of Doors: <code>2</code></li>
+        <li>Engine: 6.5L V12, 691 <code> Horsepower</code></li>
+      </ul>
+<!--       <p>Use the tabs below to change slide.</p>
+      <p>Et voila.</p> -->
+    </div>
+  </div>
 
-<h1>Description</h1>
-<h2><%= @listing.production_year%></h2>
+  <!-- Slide 2 -->
+  <label class="slide-button" for="slideCheckbox2">More</label>
+  <input type="radio" id="slideCheckbox2" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h1>More</h1>
+      <p>Lamborghini?s most recent addition to an already
+        impressive fleet of supercars is the Aventador,
+        named after an 1118 pound fighting bull from the Saragossa Bull-Fighting Ring in Spain.
+         Just as the bull fought valiantly against its opponents,
+         Lamborghini?s eponymous Aventador does the same,
+          bringing to fruition an other-worldly 6.5 liter V12,
+       capable of producing 690 horsepower, and 510 foot pounds of torque.
+        Though less refined than Ferrari?s 458 Italia masterpiece,
+         the Lamborghini Aventador evokes a certain adolescent yearning,
+          a innate desire to challenge the boundaries of what we think is possible.
+           As Lamborghini's flagship vehicle, the Aventador comes in a variety of options,
+            from coupe to convertible, and is probably the most extreme car rental offered
+             by Auto Europe.</p>
+    </div>
+  </div>
 
-<h2>start date</h2>
-<h2><%= @listing.start_date%></h2>
-
-<h2>end date</h2>
-<h2><%= @listing.end_date%></h2>
-<h2>Price</h2>
-<h2><%= @listing.prices%></h2>
-
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Booking
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+  <!-- Slide 3 -->
+  <label class="slide-button" for="slideCheckbox3">Yet More</label>
+  <input type="radio" id="slideCheckbox3" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <h1>Yet More</h1>
+      <div class="m-linkitem">
+        <h1>Hover Below</h1>
+        <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quia natus repudiandae consequuntur tenetur consequatur.</a>
       </div>
     </div>
   </div>
-</div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Save for later
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+  <!-- Slide 4 -->
+  <label class="slide-button" for="slideCheckbox4">Booking</label>
+  <input type="radio" id="slideCheckbox4" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <h1>BOOKING</h1>
+        <button id="clickme" class="btn btn-primary btn-lg">
+          Click me!
         </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
-</div>
+
+  <!-- Slide 5 -->
+  <label class="slide-button" for="slideCheckbox5">Save</label>
+  <input type="radio" id="slideCheckbox5" name="slide"></input>
+  <div class="slide">
+    <div class="slide__content">
+      <h1>The end</h1>
+      <p>It's over</p>
+    </div>
+  </div>
+
+  <!-- Add more slides here! -->
+
+</fieldset>
