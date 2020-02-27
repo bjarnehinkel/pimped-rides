@@ -52,7 +52,10 @@ ActiveRecord::Schema.define(version: 2020_02_27_113127) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.integer "price"
+    t.string "start_date"
+    t.string "end_date"
+    t.integer "prices"
+    t.string "photo_code"
     t.text "description"
     t.integer "horsepower"
     t.string "engine"

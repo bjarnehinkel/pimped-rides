@@ -13,43 +13,27 @@
             <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
           </div>
           <div class="col-6 d-flex justify-content-end">
-             <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">
-                <i class="fas fa-share pr-1"></i> Save
+            <!-- Button trigger modal SAVE-->
+            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
+              <i class="fas fa-share pr-1"></i> Save
             </button>
           </div>
         </div>
-
-        <!-- Button trigger modal -->
-
         <p> Production Year >>> <%= @listing.production_year %> </p>
+        <p> Engine >>> <%= @listing.engine %> </p>
+        <p> Horse Power >>> <%= @listing.horsepower %> </p>
+        <p> Horse Power >>> <%= @listing.description %> </p>
         <h2> <%= @listing.prices %> €/day </h2>
+         <!-- Button trigger modal BOOKING-->
+        <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
+          BOOK NOW!
+        </button>
 
+        <!-- Modal SAVE-->
+        <%= render 'components/save-modal'%>
 
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title text-dark" id="exampleModalLabel">Save your ride for later!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body text-dark">
-                <p> <%= @listing.brand %> <%= @listing.name %> has been saved into your profile</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <%= render 'components/booking-form' %>
-
-
+        <!-- BOOKING MODAL-->
+        <%= render 'components/booking-modal'%>
 
       </div>
     </div>
