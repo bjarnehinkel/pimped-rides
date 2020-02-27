@@ -3,5 +3,42 @@
 </div>
 
 <br>
-<p> <%= @user%> </p>
+<div class="text-center">
+  <h1> Welcome User! </h1>
+  <p> email: <%= @user.email %></p>
+</div>
+
+<div class ="container mt-4">
+ <h3> Your listings are: </h3>
+  <div class ="cards">
+
+      <% if @listings.present? %>
+        <% @listings.each do |listing| %>
+        <%= link_to listing_path(listing) do %>
+          <%= render 'components/listing-card', listing: listing %>
+        <% end %>
+        <% end %>
+      <% else %>
+        <p> Currently, you have no listing! </p>
+    <% end %>
+  </div>
+
+</div>
+
+<br>
+<br>
+
+<div class= "container mt-4" >
+ <h3> Your bookings are: </h3>
+  <div class ="cards">
+      <% if @bookings.present? %>
+        <% @bookings.each do |booking| %>
+          <%= render 'components/listing-card', booking: booking %>
+        <% end %>
+      <% else %>
+        <p> Currently, you have no bookings! </p>
+    <% end %>
+  </div>
+</div>
+
 
