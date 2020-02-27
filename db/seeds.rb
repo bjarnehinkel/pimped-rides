@@ -17,7 +17,7 @@ vw = Listing.new(
   name: 'Golf',
   price: 310,
   description: 'Classic german tuning car. A classic and clean design as well as a crazy engine swap awaits you.',
-  horsepower: 380
+  horsepower: 380,
   engine: '1.8T (inline 4)'
   )
 vw_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810344/VW%20Golf/martin-katler-N1p9Ih0qq-c-unsplash_nqszjh.jpg')
