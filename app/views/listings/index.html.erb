@@ -5,6 +5,7 @@
   <div class="cards">
     <% @listings.each do |listing| %>
       <%= link_to listing_path(listing) do %>
+        <% raise %>
         <%= render 'components/listing-card', listing: listing %>
       <% end %>
     <% end %>
