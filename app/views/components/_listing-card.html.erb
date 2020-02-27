@@ -1,10 +1,16 @@
 <div class="card-trip">
-  <img src= "<%= image_path('card_image2.jpg') %>", id= 'card-image'>
+  <% if listing.photos.attached? %>
+    <%= cl_image_tag listing.photos[0].key %>
+  <% end %>
+
+<!--  <%= render 'components/carousel-cards-index', listing: listing%> -->
+
+
   <div class="card-trip-infos">
     <div>
       <h2><%= listing.brand %></h2>
       <p><%= listing.name %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= listing.prices %>€/day</h2>
+    <h2 class="card-trip-pricing"><%= listing.price %>€/day</h2>
   </div>
 </div>
