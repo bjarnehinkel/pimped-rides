@@ -47,6 +47,6 @@
 private
 
   def params_listing
-    params.require(:listing).permit(:name,:brand,:production_year)
+    params.require(:listing).permit(:name,:brand,:production_year, photos: [])
   end
 end

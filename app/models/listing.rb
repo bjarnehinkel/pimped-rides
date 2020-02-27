@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
   belongs_to :user
-  has_one_attached :photo
+  has_many_attached :photos
   has_many :bookings
   validates :brand, presence: true
   validates :production_year, presence: true

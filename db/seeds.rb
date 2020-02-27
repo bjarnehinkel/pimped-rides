@@ -20,7 +20,7 @@ puts "the test starts here"
     name: Faker::Vehicle.model,
     start_date: Faker::Date.in_date_period,
     end_date: Faker::Date.forward(days: 14),
-    prices: 290
+    prices: Faker::Commerce.price
   )
   listing.save!
 end
