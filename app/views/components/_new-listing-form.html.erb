@@ -4,7 +4,7 @@
   <%= f.input :production_year %>
   <%= f.label :prices, "Daily Price" %>
   <%= f.input :prices %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, class:"btn btn-outline-light w-100 mt-3" %>
   <%= link_to "Cancel", listings_path, class:"btn btn-outline-light w-100 mt-3" %>
 <% end %>
