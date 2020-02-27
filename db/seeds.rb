@@ -21,9 +21,9 @@ vw = Listing.new(
 vw_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810344/VW%20Golf/martin-katler-N1p9Ih0qq-c-unsplash_nqszjh.jpg')
 vw_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810337/VW%20Golf/martin-katler-E5QW_maORfg-unsplash_hcxaix.jpg')
 vw_3 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810326/VW%20Golf/martin-katler-OfM1G5mWrdU-unsplash_pje4sd.jpg')
-vw.photo.attach(vw_1)
-vw.photo.attach(vw_2)
-vw.photo.attach(vw_3)
+vw.photos.attach(io: vw_1, filename: 'vw1.jpg', content_type: 'image/jpg')
+vw.photos.attach(io: vw_2, filename: 'vw2.jpg', content_type: 'image/jpg')
+vw.photos.attach(io: vw_3, filename: 'vw3.jpg', content_type: 'image/jpg')
 vw.save!
 
 
@@ -38,9 +38,9 @@ nissan = Listing.new(
 nissan_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811335/Nissan%20Silvia%20S15/velito-eYgmMc5HA3M-unsplash_lrr0nl.jpg')
 nissan_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811330/Nissan%20Silvia%20S15/velito-iDK6fOujk-A-unsplash_qk5zuj.jpg')
 nissan_3 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811326/Nissan%20Silvia%20S15/velito-QJtUT8qLuZg-unsplash_zfpobs.jpg')
-nissan.photo.attach(nissan_1)
-nissan.photo.attach(nissan_2)
-nissan.photo.attach(nissan_3)
+nissan.photos.attach(io: nissan_1, filename: 'nissan1.jpg', content_type: 'image/jpg')
+nissan.photos.attach(io: nissan_2, filename: 'nissan2.jpg', content_type: 'image/jpg')
+nissan.photos.attach(io: nissan_3, filename: 'nissan3.jpg', content_type: 'image/jpg')
 nissan.save!
 
 
@@ -55,9 +55,9 @@ ford = Listing.new(
 ford_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811715/Ford%20Mustang/lance-asper-50cIn5ELxLo-unsplash_otu30i.jpg')
 ford_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811721/Ford%20Mustang/lance-asper-CJ6Zq-d3V8k-unsplash_dm6s9y.jpg')
 ford_3 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811729/Ford%20Mustang/lance-asper-N9Pf2J656aQ-unsplash_yetza4.jpg')
-ford.photo.attach(ford_1)
-ford.photo.attach(ford_2)
-ford.photo.attach(ford_3)
+ford.photos.attach(io: ford_1, filename: 'ford1.jpg', content_type: 'image/jpg')
+ford.photos.attach(io: ford_2, filename: 'ford2.jpg', content_type: 'image/jpg')
+ford.photos.attach(io: ford_3, filename: 'ford3.jpg', content_type: 'image/jpg')
 ford.save!
 
 mitsubishi = Listing.new(
@@ -71,9 +71,9 @@ mitsubishi = Listing.new(
 mitsubishi_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582812308/Mitsubishi%20EVO/aachal-vJoAWqfcvBk-unsplash_p8ivka.jpg')
 mitsubishi_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582812315/Mitsubishi%20EVO/aachal-fp46DdVCGh8-unsplash_wkab8i.jpg')
 mitsubishi_3 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582812310/Mitsubishi%20EVO/aachal-Ok-e-pVNv-E-unsplash_jp5kao.jpg')
-mitsubishi.photo.attach(mitsubishi_1)
-mitsubishi.photo.attach(mitsubishi_2)
-mitsubishi.photo.attach(mitsubishi_3)
+mitsubishi.photos.attach(io: mitsubishi_1, filename: 'mitsubishi1.jpg', content_type: 'image/jpg')
+mitsubishi.photos.attach(io: mitsubishi_2, filename: 'mitsubishi2.jpg', content_type: 'image/jpg')
+mitsubishi.photos.attach(io: mitsubishi_3, filename: 'mitsubishi3.jpg', content_type: 'image/jpg')
 mitsubishi.save!
 
 lambo = Listing.new(
@@ -87,7 +87,7 @@ lambo = Listing.new(
 lambo_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582813718/lamborghini/gh_yxptoj.jpg')
 lambo_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582813718/lamborghini/lambor_r5x0qw.jpg')
 lambo_3 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582813715/lamborghini/ini_ogcskf.jpg')
-lambo.photo.attach(lambo_1)
-lambo.photo.attach(lambo_2)
-lambo.photo.attach(lambo_3)
+lambo.photos.attach(io: lambo_1, filename: 'lambo1.jpg', content_type: 'image/jpg')
+lambo.photos.attach(io: lambo_2, filename: 'lambo2.jpg', content_type: 'image/jpg')
+lambo.photos.attach(io: lambo_3, filename: 'lambo3.jpg', content_type: 'image/jpg')
 lambo.save!
