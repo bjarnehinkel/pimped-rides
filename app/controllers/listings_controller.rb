@@ -6,15 +6,20 @@
   end
 
   def search
+    query_production_year = 'production_year ILIKE ?'
+    query_brand = 'brand ILIKE ?'
+    query_both = 'brand ILIKE ? AND production_year ILIKE ?'
+    year = params[:search][:production_year]
+    brand = params[:search][:brand]
     unless params[:search].nil?
-      if (params[:search][:brand] == "" && params[:search][:production_year] == "")
+      if (params[:search][:brand] == "" && year == "")
         @listings = Listing.all
-      elsif params[:search][:brand] == "" && params[:search][:production_year] != ""
-        @listings = Listing.where('production_year LIKE ?', "%#{params[:search][:production_year]}%")
-      elsif params[:search][:brand] != "" && params[:search][:production_year] == ""
-        @listings = Listing.where('brand LIKE ?', "%#{params[:search][:brand]}%")
+      elsif params[:search][:brand] == "" && year != ""
+        @listings = Listing.where(query_production_year, "%#{year}%")
+      elsif params[:search][:brand] != "" && year == ""
+        @listings = Listing.where(query_brand, "%#{brand}%")
       else
-        @listings = Listing.where('brand LIKE ? AND production_year LIKE ?', "%#{params[:search][:brand]}%", "%#{params[:search][:production_year]}%")
+        @listings = Listing.where(query_both, "%#{brand}%", "%#{year}%")
       end
     else
       @listings = Listing.all
