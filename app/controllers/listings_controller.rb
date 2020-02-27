@@ -9,9 +9,9 @@
     query_production_year = 'production_year ILIKE ?'
     query_brand = 'brand ILIKE ?'
     query_both = 'brand ILIKE ? AND production_year ILIKE ?'
+    unless params[:search].nil?
     year = params[:search][:production_year]
     brand = params[:search][:brand]
-    unless params[:search].nil?
       if (params[:search][:brand] == "" && year == "")
         @listings = Listing.all
       elsif params[:search][:brand] == "" && year != ""
