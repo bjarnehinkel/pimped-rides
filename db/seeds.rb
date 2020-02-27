@@ -16,7 +16,9 @@ vw = Listing.new(
   user: User.new(email: Faker::Internet.email , password: '123456'),
   name: 'Golf',
   price: 310,
-  description: 'Classic german tuning car. A classic and clean design as well as a crazy engine swap awaits you.'
+  description: 'Classic german tuning car. A classic and clean design as well as a crazy engine swap awaits you.',
+  horsepower: 380,
+  engine: '1.8T (inline 4)'
   )
 vw_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810344/VW%20Golf/martin-katler-N1p9Ih0qq-c-unsplash_nqszjh.jpg')
 vw_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582810337/VW%20Golf/martin-katler-E5QW_maORfg-unsplash_hcxaix.jpg')
@@ -33,7 +35,9 @@ nissan = Listing.new(
   user: User.new(email: Faker::Internet.email , password: '123456'),
   name: 'Silvia S15',
   price: 240,
-  description: 'Amazing Japan-Style experience while staying far away from the mainstream. Slick white and black design.'
+  description: 'Amazing Japan-Style experience while staying far away from the mainstream. Slick white and black design.',
+  horsepower: 640,
+  engine: '2JZ (inline 6)'
   )
 nissan_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811335/Nissan%20Silvia%20S15/velito-eYgmMc5HA3M-unsplash_lrr0nl.jpg')
 nissan_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811330/Nissan%20Silvia%20S15/velito-iDK6fOujk-A-unsplash_qk5zuj.jpg')
@@ -50,7 +54,9 @@ ford = Listing.new(
   user: User.new(email: Faker::Internet.email , password: '123456'),
   name: 'Mustang',
   price: 500,
-  description: 'The Epitome of new time american muscle. An experience for the eyes as well as any car lovers heart!'
+  description: 'The Epitome of new time american muscle. An experience for the eyes as well as any car lovers heart!',
+  horsepower: 673,
+  engine: 'V8'
   )
 ford_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811715/Ford%20Mustang/lance-asper-50cIn5ELxLo-unsplash_otu30i.jpg')
 ford_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582811721/Ford%20Mustang/lance-asper-CJ6Zq-d3V8k-unsplash_dm6s9y.jpg')
@@ -66,7 +72,9 @@ mitsubishi = Listing.new(
   user: User.new(email: Faker::Internet.email , password: '123456'),
   name: 'Lancer EVO',
   price: 500,
-  description: 'Absolute tuning classic, and perfect for the Japan tuning lovers for a mid-range budget.'
+  description: 'Absolute tuning classic, and perfect for the Japan tuning lovers for a mid-range budget.',
+  horsepower: 710,
+  engine: '4g63t (inline 4)'
   )
 mitsubishi_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582812308/Mitsubishi%20EVO/aachal-vJoAWqfcvBk-unsplash_p8ivka.jpg')
 mitsubishi_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582812315/Mitsubishi%20EVO/aachal-fp46DdVCGh8-unsplash_wkab8i.jpg')
@@ -82,7 +90,9 @@ lambo = Listing.new(
   user: User.new(email: Faker::Internet.email , password: '123456'),
   name: 'Hurracan',
   price: 800,
-  description: 'Mad Mikes legendary Lamborghini Hurracan from the Goodwood festival of speed.'
+  description: 'Mad Mikes legendary Lamborghini Hurracan from the Goodwood festival of speed.',
+  horsepower: 1014,
+  engine: 'V12'
   )
 lambo_1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582813718/lamborghini/gh_yxptoj.jpg')
 lambo_2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1582813718/lamborghini/lambor_r5x0qw.jpg')
