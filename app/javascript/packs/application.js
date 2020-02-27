@@ -12,3 +12,4 @@ pickDate();
 // openModal();
 // closeModal();
 // outsideClick();
+$('.carousel').carousel()

@@ -12,6 +12,7 @@
     unless params[:search].nil?
       year = params[:search][:production_year]
       brand = params[:search][:brand]
+
       if (params[:search][:brand] == "" && year == "")
         @listings = Listing.all
       elsif params[:search][:brand] == "" && year != ""
@@ -47,6 +48,6 @@
 private
 
   def params_listing
-    params.require(:listing).permit(:name,:brand,:production_year)
+    params.require(:listing).permit(:name,:brand,:production_year, photos: [])
   end
 end

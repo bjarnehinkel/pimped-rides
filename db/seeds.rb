@@ -26,6 +26,7 @@ vw.photo.attach(vw_2)
 vw.photo.attach(vw_3)
 vw.save!
 
+
 nissan = Listing.new(
   brand: 'Nissan',
   production_year: 2002,
@@ -41,6 +42,7 @@ nissan.photo.attach(nissan_1)
 nissan.photo.attach(nissan_2)
 nissan.photo.attach(nissan_3)
 nissan.save!
+
 
 ford = Listing.new(
   brand: 'Ford',
