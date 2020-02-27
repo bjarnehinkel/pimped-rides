@@ -2,9 +2,8 @@
   <%= f.input :name %>
   <%= f.input :brand %>
   <%= f.input :production_year %>
-  <%= f.label :prices, "Daily Price" %>
-  <%= f.input :prices %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :price, label: 'Daily Price' %>
   <%= f.button :submit, class:"btn btn-outline-light w-100 mt-3" %>
   <%= link_to "Cancel", listings_path, class:"btn btn-outline-light w-100 mt-3" %>
 <% end %>
