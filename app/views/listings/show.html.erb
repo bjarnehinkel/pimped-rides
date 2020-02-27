@@ -1,119 +1,64 @@
-<fieldset class="slideshow">
-  <!-- Slide 1 -->
-  <label class="slide-button" for="slideCheckbox1">Intro</label>
-  <input type="radio" id="slideCheckbox1" name="slide" checked></input>
-  <div class="slide">
-    <div class="slide__content">
-      <br><br><br>
-      <h1>LAMBORGHINI HURACAN</h1>
-      <p>Specials on Luxury Car Rentals.</p>
-      <p>To add or remove slides:</p>
-      <ul>
-        <li>Car Class: Luxury or Luxury Convertible</li>
-        <li>Make: <code>Lamborghini</code></li>
-        <li>Number of Doors: <code>2</code></li>
-        <li>Engine: 6.5L V12, 691 <code> Horsepower</code></li>
-      </ul>
-<!--       <p>Use the tabs below to change slide.</p>
-      <p>Et voila.</p> -->
-    </div>
-  </div>
-  <!-- Slide 2 -->
-  <label class="slide-button" for="slideCheckbox2">More</label>
-  <input type="radio" id="slideCheckbox2" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-      <br>
-      <br>
-      <br>
-      <br>
-      <h1>More</h1>
-      <p>Lamborghini?s most recent addition to an already
-        impressive fleet of supercars is the Aventador,
-        named after an 1118 pound fighting bull from the Saragossa Bull-Fighting Ring in Spain.
-         Just as the bull fought valiantly against its opponents,
-         Lamborghini?s eponymous Aventador does the same,
-          bringing to fruition an other-worldly 6.5 liter V12,
-       capable of producing 690 horsepower, and 510 foot pounds of torque.
-        Though less refined than Ferrari?s 458 Italia masterpiece,
-         the Lamborghini Aventador evokes a certain adolescent yearning,
-          a innate desire to challenge the boundaries of what we think is possible.
-           As Lamborghini's flagship vehicle, the Aventador comes in a variety of options,
-            from coupe to convertible, and is probably the most extreme car rental offered
-             by Auto Europe.</p>
-    </div>
-  </div>
-  <!-- Slide 3 -->
-  <label class="slide-button" for="slideCheckbox3">Yet More</label>
-  <input type="radio" id="slideCheckbox3" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-      <h1>Yet More</h1>
-      <div class="m-linkitem">
-        <h1>Hover Below</h1>
-        <a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quia natus repudiandae consequuntur tenetur consequatur.</a>
+<body class="ct-dark">
+
+  <%= render 'components/navbar'%>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-6 bg-danger">
+        <!-- PICTURES HERE -->
       </div>
-    </div>
-  </div>
-  <!-- Slide 4 -->
-  <label class="slide-button" for="slideCheckbox4">Booking</label>
-  <input type="radio" id="slideCheckbox4" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-<!--         <button id="clickme" class="btn btn-primary btn-lg">
-          Booking
-        </button> -->
+      <div class="col-6 text-light">
+
+        <div class="row">
+          <div class="col-6">
+            <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+             <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-share pr-1"></i> Save
+            </button>
+          </div>
+        </div>
+
         <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary button-model" data-toggle="modal" data-target="#exampleModalCenter">
-        Booking
-      </button>
-      <button type="button" class="btn btn-primary button-model" data-toggle="modal" data-target="#exampleModalCenter">
-        Save
-      </button>
 
-
-    </div>
-  </div>
-  <!-- Slide 5 -->
-  <label class="slide-button" for="slideCheckbox5">Search</label>
-  <input type="radio" id="slideCheckbox5" name="slide"></input>
-  <div class="slide">
-    <div class="slide__content">
-
-
-      <button class="btn btn-primary button-model">
-        <%= link_to listings_path do %>
-          <p class="Pimped-Rides">Back to search</p>
-        <% end %>
-      </button>
-
-
-    </div>
-  </div>
-  <!-- Add more slides here! -->
-</fieldset>
+        <p> Production Year >>> <%= @listing.production_year %> </p>
+        <h2> <%= @listing.prices %> €/day </h2>
 
 
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Done</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-dark" id="exampleModalLabel">Save your ride for later!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body text-dark">
+                <p> <%= @listing.brand %> <%= @listing.name %> has been saved into your profile</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
             </div>
           </div>
         </div>
+
+        <%= render 'components/booking-form' %>
+
+
+
       </div>
+    </div>
+  </div>
+
+</body>
+
+
+
 
 
 

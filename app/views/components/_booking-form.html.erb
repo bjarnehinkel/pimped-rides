@@ -1,0 +1,7 @@
+<%= simple_form_for @listing do |f|%>
+  <%= f.input :brand %>
+  <%= f.input :name %>
+  <%= f.input :production_year %>
+  <%= f.input :prices %>
+  <%= f.button :submit, "Book now!", class:"btn btn-danger w-100 mt-3" %>
+<% end %>
