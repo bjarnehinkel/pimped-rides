@@ -11,7 +11,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
       <% if user_signed_in? %>
-        <li class="mr-2" style="font-size: 15px;"><%= current_user.email %></li>
+        <li class="mr-2" style="font-size: 15px;"><%= current_user.name %></li>
       <% end %>
       <li class="nav-item dropdown">
         <i class="far fa-user avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
