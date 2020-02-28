@@ -48,6 +48,6 @@
 private
 
   def params_listing
-    params.require(:listing).permit(:name,:brand,:name,:price,photos: [])
+    params.require(:listing).permit(:name, :brand, :price, :production_year, :engine, :horsepower, :description, photos: [])
   end
 end
