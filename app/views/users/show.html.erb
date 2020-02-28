@@ -2,7 +2,6 @@
   <%= render 'components/navbar'%>
 </div>
 
-<br>
 <div class="text-center">
   <h1> Welcome <strong><%= @user.name %>!</strong></h1>
   <p> email: <%= @user.email %></p>
@@ -38,5 +37,15 @@
     <% end %>
   </div>
 </div>
+
+<!--  -->
+
+<div class= "container mt-4" >
+  <h3> Your Saved Listings are: </h3>
+    <div class ="cards">
+      <%= render 'components/savedlisting-form' %>
+    </div>
+</div>
+
 
 
