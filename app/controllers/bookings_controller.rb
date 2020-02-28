@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @listing = Listing.find(params[:listing_id])
     @booking.listing = @listing
+    @booking.total_price = @booking.days * @booking.listing.price
     if @booking.save
       redirect_to user_path(@user)
     else
@@ -26,7 +27,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:days)
+    params.require(:booking).permit(:days, :total_price)
   end
 
 end
