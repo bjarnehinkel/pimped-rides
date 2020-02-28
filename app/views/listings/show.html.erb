@@ -1,46 +1,55 @@
-<body class="ct-dark">
-
-  <%= render 'components/navbar'%>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-6 bg-danger">
-        <!-- PICTURES HERE -->
-      </div>
-      <div class="col-6 text-light">
-
-        <div class="row">
-          <div class="col-6">
-            <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
-          </div>
-          <div class="col-6 d-flex justify-content-end">
-            <!-- Button trigger modal SAVE-->
-            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
-              <i class="fas fa-share pr-1"></i> Save
-            </button>
+<body class="dark">
+  <%= render 'components/navbar' %>
+  <div class="container mt-5 d-flex" style="max-height: 400px;">
+    <div class="mr-3">
+      <% if @listing.photos.attached? %>
+        <div id="show-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @listing.photos[0].key, width: 700, height: 400, crop: :fill, gravity: :auto %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @listing.photos[1].key, width: 700, height: 400, crop: :fill, gravity: :auto %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @listing.photos[2].key, width: 700, height: 400, crop: :fill, gravity: :auto %>
+            </div>
           </div>
         </div>
-        <p> Production Year >>> <%= @listing.production_year %> </p>
-        <p> Engine >>> <%= @listing.engine %> </p>
-        <p> Horse Power >>> <%= @listing.horsepower %> </p>
-        <p> Horse Power >>> <%= @listing.description %> </p>
-        <h2> <%= @listing.price %> €/day </h2>
-         <!-- Button trigger modal BOOKING-->
-        <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
-          BOOK NOW!
-        </button>
-
-        <!-- Modal SAVE-->
-        <%= render 'components/save-modal'%>
-
-        <!-- BOOKING MODAL-->
-        <%= render 'components/booking-modal'%>
-
+      <% else %>
+        <%= image_tag asset_url('car1') %>
+      <% end %>
+    </div>
+    <div class="text-light">
+      <div class="row">
+        <div class="col-6">
+          <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+          <!-- Button trigger modal SAVE-->
+          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
+            <i class="fas fa-share pr-1"></i> Save
+          </button>
+        </div>
       </div>
+      <p> Production Year: <%= @listing.production_year %> </p>
+      <p> Engine: <%= @listing.engine %> </p>
+      <p> Horse Power: <%= @listing.horsepower %> </p>
+      <p> Description: <%= @listing.description %> </p>
+      <h2> <%= @listing.price %> €/day </h2>
+       <!-- Button trigger modal BOOKING-->
+      <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
+        BOOK NOW!
+      </button>
+
+      <!-- Modal SAVE-->
+      <%= render 'components/save-modal'%>
+
+      <!-- BOOKING MODAL-->
+      <%= render 'components/booking-modal'%>
     </div>
   </div>
-
 </body>
-
 
 
 
