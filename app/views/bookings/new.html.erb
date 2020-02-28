@@ -1,0 +1,32 @@
+<div class="dark">
+  <%= render 'components/navbar' %>
+</div>
+
+<div class= "container h-100">
+  <div class="d-flex align-items-center justify-content-center h-100">
+    <div>
+       <h2>Complete your booking</h2>
+       <div class ='row'>
+          <div class="col-6">
+              <%= render 'components/listing-card', listing: @listing %>
+          </div>
+          <div class="col-6">
+            <%= simple_form_for [@listing, @booking], method: :post  do |f| %>
+              <%= f.input :days, collection: 1..30%>
+              <% @booking.total_price = (10*@listing.price) %>
+              <p><%= @booking.total_price %></p>
+              <%= f.button :submit, 'Book', class:"form-control btn btn-outline-dark w-100 mt-3"%>
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

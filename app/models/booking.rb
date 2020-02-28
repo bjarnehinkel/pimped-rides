@@ -3,4 +3,5 @@ class Booking < ApplicationRecord
   belongs_to :listing
   validates :user, presence: true
   validates :listing, presence: true
+  validates :days, presence: true
 end
