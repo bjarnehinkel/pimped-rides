@@ -1,13 +1,12 @@
 <div class="container mt-5">
   <div class="d-flex justify-content-start">
-    <div class="col-12 col-md-8 col-lg-5 new-form mt-5">
+    <div class="col-12 col-md-8 col-lg-5 search-form mt-5">
       <h2 class="text-center mb-4 ct-letter-spacing-1">
         Find your <strong>Car</strong>
       </h2>
       <%= simple_form_for :search, url: listings_path, method: :get do |f| %>
         <%= f.input :brand %>
-        <%= f.input :production_year %>
-        <%= f.input :date, as: :date %>
+        <%= f.input :name %>
         <%= f.button :submit, 'Search', class:"form-control btn btn-outline-light w-100 mt-3"%>
       <% end %>
     </div>
