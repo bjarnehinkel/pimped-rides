@@ -12,4 +12,6 @@ pickDate();
 // openModal();
 // closeModal();
 // outsideClick();
-$('.carousel').carousel()
+$('#show-carousel').carousel({
+  interval: 3000
+})

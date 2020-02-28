@@ -12,15 +12,14 @@
 <div class ="container mt-4">
  <h3> Your listings are: </h3>
   <div class ="cards">
-
-      <% if @listings.present? %>
-        <% @listings.each do |listing| %>
+    <% if @listings.present? %>
+      <% @listings.each do |listing| %>
         <%= link_to listing_path(listing) do %>
           <%= render 'components/listing-card', listing: listing %>
         <% end %>
-        <% end %>
-      <% else %>
-        <p> Currently, you have no listing! </p>
+      <% end %>
+    <% else %>
+      <p> Currently, you have no listing! </p>
     <% end %>
   </div>
 </div>
@@ -33,7 +32,7 @@
   <div class ="cards">
       <% if @bookings.present? %>
         <% @bookings.each do |booking| %>
-          <%= render 'components/listing-card', booking: booking %>
+          <%= render 'components/booking-card', booking: booking %>
         <% end %>
       <% else %>
         <p> Currently, you have no bookings! </p>

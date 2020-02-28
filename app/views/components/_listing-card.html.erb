@@ -1,10 +1,7 @@
-<div class="card-trip">
+<div class="card-trip border rounded">
   <% if listing.photos.attached? %>
     <%= cl_image_tag listing.photos[0].key %>
   <% end %>
-
-<!--  <%= render 'components/carousel-cards-index', listing: listing%> -->
-
 
   <div class="card-trip-infos">
     <div>

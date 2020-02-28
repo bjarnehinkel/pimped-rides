@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'bookings/index'
+  get 'bookings/new'
+  get 'bookings/create'
   devise_for :users
 
   get 'users/:id', to: 'users#show', as: :user
