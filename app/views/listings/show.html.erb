@@ -1,7 +1,7 @@
 <body class="ct-dark">
 
   <%= render 'components/navbar'%>
-  <div class="container mt-5">
+  <div class="container mt-5 pt-5">
     <div class="row">
       <div class="col-6 bg-danger">
         <!-- PICTURES HERE -->
@@ -9,21 +9,24 @@
       <div class="col-6 text-light">
 
         <div class="row">
-          <div class="col-6">
-            <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
+          <div class="col-9">
+            <h2 class=""> <%= @listing.brand %> <%= @listing.name %> </h2>
           </div>
-          <div class="col-6 d-flex justify-content-end">
+          <div class="col-3 d-flex justify-content-end">
             <!-- Button trigger modal SAVE-->
             <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
               <i class="fas fa-share pr-1"></i> Save
             </button>
           </div>
         </div>
-        <p> Production Year >>> <%= @listing.production_year %> </p>
-        <p> Engine >>> <%= @listing.engine %> </p>
-        <p> Horse Power >>> <%= @listing.horsepower %> </p>
-        <p> Horse Power >>> <%= @listing.description %> </p>
-        <h2> <%= @listing.price %> €/day </h2>
+        <div class="lead mt-5">
+          <p> Production Year <span class="font-weight-bold"><%= @listing.production_year %> </span> </p>
+          <p> Engine <span class="font-weight-bold"> <%= @listing.engine %> </span> </p>
+          <p> Horsepower <span class="font-weight-bold"><%= @listing.horsepower %> </span> </p>
+          <p class="margin-zero"> <span class="font-weight-bold"> About <%= @listing.brand %> <%= @listing.name %> </span> </p>
+          <p> <%= @listing.description %> </p>
+          <h2 class="mt-5"> <%= @listing.price %> €/day </h2>
+        </div>
          <!-- Button trigger modal BOOKING-->
         <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
           BOOK NOW!
