@@ -31,8 +31,7 @@
   <div class ="cards">
       <% if @bookings.present? %>
         <% @bookings.each do |booking| %>
-        <p><%= booking.listing.brand %></p>
-          <%#= render 'components/listing-card', listing: booking %>
+          <%= render 'components/booking-card', booking: booking %>
         <% end %>
       <% else %>
         <p> Currently, you have no bookings! </p>
