@@ -29,6 +29,7 @@
 
   def show
     @listing = Listing.find(params[:id])
+    @saved_listing = SavedListing.new
   end
 
   def new
@@ -43,6 +44,10 @@
     else
       render :new
     end
+  end
+
+  def save
+    current_user.saved_listings << @Listing.find(params[:id])
   end
 
 private

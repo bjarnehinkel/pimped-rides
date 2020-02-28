@@ -14,9 +14,9 @@
           </div>
           <div class="col-6 d-flex justify-content-end">
             <!-- Button trigger modal SAVE-->
-            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
-              <i class="fas fa-share pr-1"></i> Save
-            </button>
+            <%= simple_form_for [@listing, @saved_listing] do |f|%>
+              <%= f.button :submit, class:"btn btn-outline-light w-100 mt-3" %>
+            <% end %>
           </div>
         </div>
         <p> Production Year >>> <%= @listing.production_year %> </p>

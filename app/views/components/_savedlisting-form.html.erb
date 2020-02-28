@@ -1,0 +1,22 @@
+<% if @saved_listings.present? %>
+  <% @saved_listings.each do |saved_listing| %>
+    <div class="card-trip">
+      <% if saved_listing.listing.photos.attached? %>
+        <%= cl_image_tag saved_listing.listing.photos[0].key %>
+      <% end %>
+
+
+
+
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= saved_listing.listing.brand %></h2>
+          <p><%= saved_listing.listing.name %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= saved_listing.listing.price %>€/day</h2>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p> Currently, you have no saved listings! </p>
+<% end %>
