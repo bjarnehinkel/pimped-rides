@@ -16,6 +16,7 @@
             </div>
           </div>
         </div>
+
       <% else %>
         <div class="text-light d-flex align-items-center justify-content-center">
           <p>No Images Uploaded</p>
@@ -43,9 +44,11 @@
         <h2 class="mt-5"> <%= @listing.price %> €/day </h2>
       </div>
        <!-- Button trigger modal BOOKING-->
-      <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
+      <!-- <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
         BOOK NOW!
-      </button>
+      </button> -->
+
+      <%= link_to 'BOOK NOW!',new_listing_booking_path(@listing), class: "btn btn-danger mt-5 px-5" %>
 
       <!-- Modal SAVE-->
       <%= render 'components/save-modal'%>
@@ -55,6 +58,7 @@
     </div>
   </div>
 </body>
+
 
 
 
