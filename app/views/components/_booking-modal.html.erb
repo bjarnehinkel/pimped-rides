@@ -1,0 +1,20 @@
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-success">
+        <h5 class="modal-title text-dark" id="bookingModalLabel">BOOKING SUCCESS </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-dark">
+        <p> <%= @listing.brand %> <%= @listing.name %> has been booked. Have fun with your ride! </p>
+        <p class="font-weight-bold">You can take a look of the details in your profile.</p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Go to profile!',root_path, class: "btn btn-outline-dark" %>
+        <%= link_to 'Great!',root_path, class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+</div>
