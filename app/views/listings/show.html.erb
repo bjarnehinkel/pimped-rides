@@ -1,8 +1,4 @@
 
-            <%= simple_form_for [@listing, @saved_listing] do |f|%>
-              <%= f.button :submit, class:"btn btn-outline-light w-100 mt-3" %>
-            <% end %>
-
 <body class="dark">
   <%= render 'components/navbar' %>
   <div class="container mt-5 d-flex" style="margin-left: 80px;">
@@ -35,9 +31,14 @@
         </div>
         <div class="col-3 d-flex justify-content-end">
           <!-- Button trigger modal SAVE-->
-          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
+     <!--      <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
             <i class="fas fa-share pr-1"></i> Save
-          </button>
+          </button> -->
+
+            <%= simple_form_for [@listing, @saved_listing] do |f|%>
+              <%= f.button :submit, class:"btn btn-outline-light" %>
+            <% end %>
+
         </div>
       </div>
       <div class="lead mt-5">
