@@ -25,16 +25,17 @@
         <p> Horse Power >>> <%= @listing.description %> </p>
         <h2> <%= @listing.price %> €/day </h2>
          <!-- Button trigger modal BOOKING-->
-        <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
+      <!--   <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
           BOOK NOW!
-        </button>
+        </button> -->
+        <%= link_to 'BOOK NOW!',new_listing_booking_path(@listing), class: "btn btn-danger mt-5 px-5" %>
 
         <!-- Modal SAVE-->
         <%= render 'components/save-modal'%>
 
         <!-- BOOKING MODAL-->
-        <%= render 'components/booking-modal'%>
-
+      <!--  <%= render 'components/booking-modal'%>
+ -->
       </div>
     </div>
   </div>
