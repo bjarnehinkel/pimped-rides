@@ -1,44 +1,67 @@
-<body class="ct-dark">
 
-  <%= render 'components/navbar'%>
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-6 bg-danger">
-        <!-- PICTURES HERE -->
-      </div>
-      <div class="col-6 text-light">
-
-        <div class="row">
-          <div class="col-6">
-            <h2> <%= @listing.brand %> <%= @listing.name %> </h2>
-          </div>
-          <div class="col-6 d-flex justify-content-end">
-            <!-- Button trigger modal SAVE-->
             <%= simple_form_for [@listing, @saved_listing] do |f|%>
               <%= f.button :submit, class:"btn btn-outline-light w-100 mt-3" %>
             <% end %>
+
+<body class="dark">
+  <%= render 'components/navbar' %>
+  <div class="container mt-5 d-flex" style="margin-left: 80px;">
+    <div class="mr-3">
+      <% if @listing.photos.attached? %>
+        <div id="show-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @listing.photos[0].key, width: 700, height: 500, crop: :fill, gravity: :auto %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @listing.photos[1].key, width: 700, height: 500, crop: :fill, gravity: :auto %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @listing.photos[2].key, width: 700, height: 500, crop: :fill, gravity: :auto %>
+            </div>
           </div>
         </div>
-        <p> Production Year >>> <%= @listing.production_year %> </p>
-        <p> Engine >>> <%= @listing.engine %> </p>
-        <p> Horse Power >>> <%= @listing.horsepower %> </p>
-        <p> Horse Power >>> <%= @listing.description %> </p>
-        <h2> <%= @listing.price %> €/day </h2>
-         <!-- Button trigger modal BOOKING-->
-        <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
-          BOOK NOW!
-        </button>
 
-        <!-- Modal SAVE-->
-        <%= render 'components/save-modal'%>
-
-        <!-- BOOKING MODAL-->
-        <%= render 'components/booking-modal'%>
-
+      <% else %>
+        <div class="text-light d-flex align-items-center justify-content-center">
+          <p>No Images Uploaded</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-6 text-light">
+      <div class="row">
+        <div class="col-9">
+          <h2 class=""> <%= @listing.brand %> <%= @listing.name %> </h2>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <!-- Button trigger modal SAVE-->
+          <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#saveModal">
+            <i class="fas fa-share pr-1"></i> Save
+          </button>
+        </div>
       </div>
+      <div class="lead mt-5">
+        <p> Production Year <span class="font-weight-bold"><%= @listing.production_year %> </span> </p>
+        <p> Engine <span class="font-weight-bold"> <%= @listing.engine %> </span> </p>
+        <p> Horsepower <span class="font-weight-bold"><%= @listing.horsepower %> </span> </p>
+        <p class="margin-zero"> <span class="font-weight-bold"> About <%= @listing.brand %> <%= @listing.name %> </span> </p>
+        <p> <%= @listing.description %> </p>
+        <h2 class="mt-5"> <%= @listing.price %> €/day </h2>
+      </div>
+       <!-- Button trigger modal BOOKING-->
+      <!-- <button type="button" class="btn btn-danger mt-5 px-5" data-toggle="modal" data-target="#bookingModal">
+        BOOK NOW!
+      </button> -->
+
+      <%= link_to 'BOOK NOW!',new_listing_booking_path(@listing), class: "btn btn-danger mt-5 px-5" %>
+
+      <!-- Modal SAVE-->
+      <%= render 'components/save-modal'%>
+
+      <!-- BOOKING MODAL-->
+      <%= render 'components/booking-modal'%>
     </div>
   </div>
-
 </body>
 
 

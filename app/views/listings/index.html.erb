@@ -1,12 +1,21 @@
-<div class="dark">
-  <%= render 'components/navbar'%>
-</div>
-<div class="container mt-4">
-  <div class="cards">
-    <% @listings.each do |listing| %>
-      <%= link_to listing_path(listing) do %>
-        <%= render 'components/listing-card', listing: listing %>
-      <% end %>
+<body class="ct-dark">
+  <div class="dark">
+    <%= render 'components/navbar'%>
+  </div>
+  <div class="container mt-5">
+    <% if @listings[0].nil? %>
+      <div class="text-center">
+        <h3 style="color: white;">No Search Results</h3>
+        <%= link_to 'Try Another Search', root_path, style:'color: white; text-decoration: underline' %>
+      </div>
+    <% else %>
+      <div class="cards">
+        <% @listings.each do |listing| %>
+          <%= link_to listing_path(listing) do %>
+            <%= render 'components/listing-card', listing: listing %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-</div>
+</body>
