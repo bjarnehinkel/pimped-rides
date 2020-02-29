@@ -1,17 +1,11 @@
-console.log('hello from webpack')
-
-
 import "bootstrap";
-// import flatpickr from "flatpickr";
 import { pickDate } from 'components/flatpickr';
-// import { openModal } from 'components/book';
-// import { closeModal } from 'components/book';
-// import { outsideClick } from 'components/book';
+import { toggleActive } from 'components/dashboard';
 
 pickDate();
-// openModal();
-// closeModal();
-// outsideClick();
+
 $('#show-carousel').carousel({
   interval: 3000
-})
+});
+
+toggleActive();
