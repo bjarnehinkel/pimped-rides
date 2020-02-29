@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-3 menu">
     <div class="text-center">
-      <h1> Welcome <%= @user.name %> </h1>
+      <h1>Welcome <strong><%= @user.name %>!</strong></h1>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item active" id="info">Account Info</li>
@@ -52,7 +52,10 @@
         </div>
     </div>
     <div class="hidden content" data-info-type="saved">
-      <!-- get saved things code -->
+      <h3> Your Saved Listings are: </h3>
+      <div class ="cards">
+        <%= render 'components/savedlisting-form' %>
+      </div>
     </div>
   </div>
 </div>
